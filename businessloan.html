@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Z Finance</title>
+    <link rel="stylesheet" href="/css/personal.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/zlogo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+<style>
+    
+.login-trigger {
+  font-weight: normal;
+  color: #fff;
+  background-color: #003679;
+  padding: 10%;
+  border-radius: 0;
+  position: relative; 
+  top: 50%;
+}
+.login-trigger :hover{
+    background-color:#ffbb38 ;
+}
+h4 {
+  font-weight: bold;
+  color: #fff;
+}
+a:link,
+a:visited {
+  text-decoration:none;
+  color:rgb(255, 250, 250);
+}
+a:hover{
+    /* background: linear-gradient(to bottom right,#5c9ae7,#003679); */
+    color: white;
+    
+}
+.close {
+  color: #fff;
+  transform: scale(1.2)
+}
+.modal-content {
+    margin-top: 100px;
+  font-weight: bold;
+  background: linear-gradient(to bottom right,#003679,#5c9ae7);
+}
+.form-control {
+  margin: 1em 0;
+  color: #fff;
+}
+.form-control:hover, .form-control:focus {
+  box-shadow: none;  
+  border-color: #fff;
+  color: rgb(10, 10, 10);
+}
+.username {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid #eee;
+  padding-left: 5px;
+  font-weight: normal;
+  background: transparent;  
+}
+.form-control::-webkit-input-placeholder {
+  color: rgb(255, 251, 251);  
+}
+.form-control:focus::-webkit-input-placeholder {
+  font-weight: bold;
+  color: #fff;
+}
+.login {
+  padding: 6px 20px;
+  border-radius: 20px;
+  background: none;
+  border: 2px solid white;
+  color: #fff;
+  font-weight: bold;
+  transition: all .5s;
+  margin-top: 1em;
+  margin-left: 30%;
+}
+.login:hover {
+    background: linear-gradient(to top left,#003679,#5c9ae7);
+  color: #fff;
+}
+
+
+
+  
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin:10px auto;
+        }
+    
+    /* Zebra striping */
+    tr:nth-of-type(odd) { 
+        background: #eee; 
+        }
+    
+    th { 
+        background: #003679; 
+        color: white; 
+        /* font-weight: bold;  */
+        }
+    
+    td, th { 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        text-align: left; 
+        font-size: 14px;
+        word-wrap: normal;
+        
+    
+        }
+    
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+        table { 
+              width: 100%; 
+              margin: 0;
+        }
+        .login-trigger {
+        padding: 5%;
+        border-radius: 7px;  
+        }
+    
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+        }
+    
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: auto; 
+            text-align: center;
+            /* white-space: nowrap; */
+            
+            /* Label the data */
+            content: attr(data-column);
+            background: #003679; 
+            color: white;
+            /* color: #000; */
+            font-weight: normal;
+        }
+    
+    }
+    </style>
+      
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+
+
+        <!-- Navbar Area -->
+        <div class="credit-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="creditNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- //////logo//////// -->
+                        <div class="imglogo">
+                            <img src="/img/core-img/zlogo.png">
+                        </div>
+
+
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="#">Account Opening</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">&nbsp;AllBanks
+                                                    Account&nbsp;&nbsp;&nbsp;Opening</a></li><br>
+                                            <li><a href="index.html">&nbsp;D-Mat Account &nbsp;&nbsp;&nbsp;Opening</a>
+                                            </li><br>
+                                            <li><a href="index.html">&nbsp;Insurance</a></li><br>
+                                            <li><a href="index.html">&nbsp;Credit Card</a></li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Loan</a>
+                                        <ul class="dropdown">
+                                            <li><a href="personalloan.html">&nbsp;Personal Loan</a></li>
+                                            <li><a href="businessloan.html">&nbsp;Business Loan</a></li>
+                                            <li><a href="homeloan.html">&nbsp;Home Loan</a></li>
+                                            <li><a href="mortgage.html">&nbsp;Loan Against Property</a></li>
+                                            <li><a href="usedcarloan.html">&nbsp;Used Car Loan</a></li>
+                                            <li><a href="#">&nbsp;Gold Loan</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="contact">
+                            <a href="tel:9850083751"><img src="img/core-img/call2.png" alt=""> +91 9850083751</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/13.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Business Loan</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Business Loan</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breadcrumb Area End ##### -->
+    <br><br><br>
+    <!-- ///// business loan information////////// -->
+   <!-- ///// Business Loan information////////// -->
+  <div class="container pt-2">
+    <div class="row">
+            <h3><i class="fa fa-hand-o-right"></i>&nbsp;About Business Loan </h3>
+                <div class="col-sm-12 border1">
+                        <p class="per"><i class="fa fa-star-half-o" style="color: #003679;" aria-hidden="true"></i> Become a businessman and to start our own small or biggest business, we should take a loan from a bank this loan is an unsecured business loan. A business loan is given to meet requirement working industry requirements,  to buy tools or machines, enhance business cash flow, and much more.
+                            The instant small business loan is the most reliable and simplest option to appropriately finance the business objectives. Banks & financial institutions offer these unsecured loans based on nature, scope & goal of the requirements. </p>
+                </div>
+    </div>
+</div>
+<br><br>    
+    <!-- Why Choose Z Finance Services? -->
+    <div class="container">
+        <div class="row">
+            <h3><i class="fa fa-hand-o-right"></i>&nbsp;Why Choose Z Finance Services?</h3>
+            <div class="col-sm-12 border1">
+                <p class="per">
+                <i class="fa fa-star-half-o" style="color: #003679;" aria-hidden="true"></i>
+                 All Top Bank/NBFCs provide Business Loan services but choosing one of them is a little bit confusing and it is a time-consuming process. <b>Z Finance Team</b> also helps you with selecting and processing your Business Loan as per your requirements. <br> Here are the reasons to choose Our financial services:</p>
+                 <ul>
+                    <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>End to End Service:</b>&nbsp; 100% assistance for the loan with help of top Lenders in India.</li><br>
+                    <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Transparent Process:</b>&nbsp;  Specialists are there to clarify any query related to your Housing loan application.</li><br>
+                    <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Expert Advice:</b>&nbsp; You get proficient guidance from qualified Z finance Experts.</li><br>
+                    <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Online Marketplace:</b>&nbsp; Z Finance is an online marketplace for all types of  loans with honest suggestions.</li><br>
+                    <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Associated With Top Bank :</b>&nbsp; Associated with top banks like ICICI, SBI, HDFC, IDFC, PNB, and top finance banks </li><br>
+                </ul> 
+            </div>
+        </div>
+    </div> 
+<br><br>
+
+<!-- Available for  -->
+<div class="container">
+    <div class="row">
+        <h3><i class="fa fa-hand-o-right"></i>&nbsp;Who should able to get Business Loan?</h3>
+        <div class="col-sm-12 border1">
+            <p class="per">
+            <i class="fa fa-star-half-o" style="color: #003679;" aria-hidden="true"></i>
+              A person who is holding business with stable earnings can avail of a business loan. The loan provider Bank have their normal conditions for sanctioning the loan amount. <br> Here are the some entities that can be apply for business loan:
+             :</p>
+             <ul>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Self-employed individuals / Professionals:</b>&nbsp; Company Secretaries, Doctors, Charted Accountants, etc.</li><br>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Startup Enterprises</b>&nbsp;  </li><br>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Small and Medium Enterprises Development </b></li><br>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Proprietorship Firms, Partnerships, Limited Liability</b>&nbsp;</li><br>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Manufacturing, Trading or Services</li><br>
+                <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Co-operative Societies, NGOs,</li><br>
+            </ul> 
+        </div>
+    </div>
+</div> 
+<br><br>
+
+ <!-- Business Loan Interest Rate Table --> 
+ <div class="container ">
+    <div class="row">
+        <h3><i class="fa fa-hand-o-right"></i>&nbsp;Business Loan Interest Rates</h3>
+        <div class="col-sm-12 col-md-12">
+            <table style="font-weight: normal;">
+                <thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                    <tr>
+                        <th >Bank Name</th>
+                        <th >Rate of Interest</th>
+                        <th >Benchmark Type</th>
+                        <th >Processing Fee</th>
+                    </tr>
+                </thead>
+
+                <tbody >
+                <tr>
+                    <td data-column="Bank Name"> SBI Business Loan</td>
+                    <td data-column="Rate of Interest">11.2% onwards</td>
+                    <td data-column="Loan Amount">Rs. 10 Lakh to Rs. 20 Crore</td>
+                    <td data-column="Processing Fee"> From 2% to 3%</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">HDFC Bank Business Loan</td>
+                    <td data-column="Rate of Interest">Min 11.90% & Max  21.35%</td>
+                    <td data-column="Loan Amount">loan up to Rs. 40 lakhs</td>
+                    <td data-column="Processing Fee">Up to 2.50% of the loan amount </td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Bank of Baroda Business Loan</td>
+                    <td data-column="Rate of Interest"> 14.10% to 20.75%</td>
+                    <td data-column="Loan Amount">Start from Rs. 5 lakhs</td>
+                    <td data-column="Processing Fee">Min Rs. 10,000</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Federal Bank</td>
+                    <td data-column="Rate of Interest">8.9% to 14%</td>
+                    <td data-column="Loan Amount">Maximum of Rs.2 crores</td>
+                    <td data-column="Processing Fee">Up to 3% of the loan amount</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Bajaj Finance</td>
+                    <td data-column="Rate of Interest"> upto 18.00%</td>
+                    <td data-column="Loan Amount">Min ₹ 5 Lakh and Max ₹ 30 Lakh</td>
+                    <td data-column="Processing Fee">Up to 3% of the loan amount
+                    </td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Axis Bank Ltd</td>
+                    <td data-column="Rate of Interest">15.5% onwards</td>
+                    <td data-column="Loan Amount">Rs.5 lakh to 50 lakh</td>
+                    <td data-column="Processing Fee">Up to 2% of loan amount + applicable taxes</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">IDBI Bank</td>
+                    <td data-column="Rate of Interest">12.25% onwards</td>
+                    <td data-column="Loan Amount">Min ₹ 50,000 and Max ₹ 5 Lakh</td>
+                    <td data-column="Processing Fee"> Up to 1.00% + GST</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Kotak Mahindra Bank</td>
+                    <td data-column="Rate of Interest"> 9.15% onwards</td>
+                    <td data-column="Loan Amount"> Rs. 3 lakhs to Rs. 75 Lakhs</td>
+                    <td data-column="Processing Fee">0.50% or Max Rs. 10,000</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">ICICI Bank</td>
+                    <td data-column="Rate of Interest">16.49% onwards</td>
+                    <td data-column="Loan Amount">Min ₹ 1 Lakh and Max ₹ 40 Lakh</td>
+                    <td data-column="Processing Fee">Starting from 0.99%, Up to 2%</td>
+                </tr>
+                <tr>
+                    <td data-column="Bank Name">Yes Bank</td>
+                    <td data-column="Rate of Interest">16.25% onwards</td>
+                    <td data-column="Loan Amount"> Min ₹ 5 Lakh and Max ₹ 50 Lak</td>
+                    <td data-column="Processing Fee">Up to 2%</td>
+                </tr>                   
+                </tbody>
+          </table>                  
+        </div>
+    </div> 
+</div>
+<br><br>
+
+  <!-- Business Loan Eligiblity --> 
+  <div class="container ">
+    <div class="row">
+        <h3><i class="fa fa-hand-o-right"></i>&nbsp;Business Loan Eligibility</h3>
+        <div class="col-sm-12 col-md-12">
+            <table style="font-weight: normal;" style="list-style-type: circle;">
+                <thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                    <tr>
+                        <th>Eligibility Criteria</th>
+                        <th >Requirement</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td data-column="Eligibility Criteria">Age</td>
+                    <td data-column="Requirement">Minimum Age: 18 years and Maximum Age: 65 years</td>
+                </tr>
+                <tr>
+                    <td data-column="Eligibility Criteria">Annual Yearly Income</td>
+                    <td data-column="Requirement">Minimum 4 to 6 lakh, depending on tde type of employment</td>
+                </tr> 
+                <tr>
+                    <td data-column="Eligibility Criteria">Cibil Score</td>
+                    <td data-column="Requirement">At least 650+ or depending on requirements</td>
+                </tr>  
+                <tr>
+                    <td data-column="Eligibility Criteria">Employment</td>
+                    <td data-column="Requirement">the applicant must be (anyone):
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Self-Employed</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;  Professional Self-Employed</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-column="Eligibility Criteria">Residence</td>
+                    <td data-column="Requirement">the applicant must be (anyone):
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;  Permanent Resident</li>
+                            <li> <i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Rented Residence where applicant resided minimum two of year</li>
+                        </ol>
+                    </td>
+                </tr>
+                </tbody>
+          </table>                  
+        </div>
+    </div>
+    <br> 
+</div>
+
+    <br><br>
+   
+ <!-- Documents Required for Business Loan -->
+     <div class="container ">
+    <h3><i class="fa fa-hand-o-right"></i>&nbsp;Documents Required for Business Loan</h3>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 ">
+            <table style="font-weight: normal;" style="list-style-type: circle;">
+                <thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                    <tr>
+                        <th>Required Documents</th>
+                        <th>For Proffestional Self-Employed Applicant</th>
+                        <th>For Self-Employed Applicant</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td data-column="Required Documents" >Application Form</td>
+                    <td data-column="Proffestional Self-Employed">Signed by Applicant and Co-Applicants with color photographs </td>
+                    <td data-column="Self-Employed">Signed by Applicant and Co-Applicants with color photographs </td>
+                </tr>
+                <tr>
+                    <td data-column="Required Documents">Identity Proof	</td>
+                    <td data-column="Proffestional Self-Employed">Any Two of Required
+                        <ul>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; PAN Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Voter ID</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Valid Passport</li>
+                        </ul>
+                    </td>
+                    <td data-column="Self-Employed">Any Two of the Required
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; PAN Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Voter ID</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Valid Passport</li>
+                        </ol>
+                    </td>
+                </tr> 
+                <tr>
+                    <td data-column="Required Documents"> Residence Address Proof</td>
+                    <td data-column="Proffestional Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Copy of Passport</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Electricity/ Telephone/ Mobile bill</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Rent Agreement</li>
+                        </ol>
+                    </td>
+                    <td data-column="Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Copy of Passport</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Electricity/ Telephone/ Mobile bill</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Rent Agreement</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-column="Required Documents">Office Address Proof</td>
+                    <td data-column="Proffestional Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;  Utility Electricity/ Telephone/ Mobile bill</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Reg. Lease Rental Agreement</li> 
+                            
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Reg. of Firm Certificate</li> 
+                        </ol>
+                    </td>
+                    <td data-column="Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;  Utility Electricity/ Telephone/ Mobile bill</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Reg. Lease Rental Agreement</li> 
+                            
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Reg. of Firm Certificate</li> 
+                        </ol>
+                    </td>
+                </tr> 
+                <tr>
+                    <td data-column="Required Documents"> Income Proof</td>
+                    <td data-column="Proffestional Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Business Licence (Shop-Act/Udyog Adhar)</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Last 2 to 3 Year ITR</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Balance Sheet and Profit and Loss  Account Statement of the Company/Firm, Business  certified by  CA</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; 12 Months of Banking</li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; TDS Certificate	</li>
+                        </ol>
+                    </td>
+                    <td data-column="Self-Employed">
+                        <ol>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Same as Proffestional Self-Employed Applicant</li>
+                        </ol>
+                    </td>
+                </tr>  
+                <tr>
+                                      
+                </tbody>
+          </table> 
+        </div>
+    </div>
+     </div><br><br>
+     <br>
+     <div class="container">
+        <button class="btn credit-btn" style="float: right;">     
+            <a  href="Personal_Details.docx" download >               
+            <i class="fa fa-download" aria-hidden="true"></i> &nbsp; Downlaod</a>
+        </button>
+    </div>
+    <br>
+    <!-- ///////bank details/////// -->
+    <div class="container">
+        <!-- id="f-accordion" -->
+        <h3><i class="fa fa-tasks"></i> Business Loan</h3>
+        <div>
+            <section >
+                <table style="font-weight: normal;">
+                    <thead thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                        <tr>
+                            <th style="width: 200px;">Bank Name</th>
+                            <th>Interest Rate Range</th>
+                            <th>Procesing Fee Range</th>
+                            <th>Loan Amount</th>
+                            <th >Tenure</th>
+                            <th style="width: 120px;">Apply</th>
+                            
+                        </tr>
+                    </thead>
+
+                    
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/hdfc-limited.png"><br>
+                            HDFC Limited
+
+                        </td>
+                        <td data-column="Interest Rate Range">Min 11.90% & Max 21.35% </td>
+                        <td data-column="Procesing Fee">Up to 2.50% of the loan amount</td>
+                        <td data-column="Loan Amount">loan up to Rs. 40 lakhs</td>
+                        <td data-column="Tenure">5-20 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/bajaj.png"><br>
+                            Bajaj Finance Limited
+                        </td>
+                        <td data-column="Interest Rate Range">upto 18.00%	</td>
+                        <td data-column="Procesing Fee">Up to 3% of the loan amount </td>
+                        <td data-column="Loan Amount">Min ₹ 5 Lakh and Max ₹ 30 Lakh</td>
+                        <td data-column="Tenure">3-15 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/axis-bank.png"><br>
+                            Axis Bank Ltd
+
+                        </td>
+                        <td data-column="Interest Rate Range">15.5% onwards	</td>
+                        <td data-column="Procesing Fee">Up to 2% of loan amount + applicable taxes</td>
+                        <td data-column="Loan Amount">₹ 5L -₹ 10L</td>
+                        <td data-column="Tenure">5-20 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/icici-bank (1).png"><br>
+                            ICICI Bank Business Loan
+
+                        </td>
+                        <td data-column="Interest Rate Range">16.49% onwards	</td>
+                        <td data-column="Procesing Fee">Starting from 0.99%, Up to 2%</td>
+                        <td data-column="Loan Amount">Min ₹ 1 Lakh and Max ₹ 40 Lakh</td>
+                        <td data-column="Tenure">3-10 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/idfc-first.png"><br>
+                            IDFC First Ltd Business Loan
+                        </td>
+                        <td data-column="Interest Rate Range">11.99% to	22.00%</td>
+                        <td data-column="Procesing Fee">2.00% One time fee</td>
+                        <td data-column="Loan Amount">Min Rs.5L to Rs.25L Max</td>
+                        <td data-column="Tenure">1 - 5 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/state-bank-of-india-home-loan-2.png"><br>
+                            State Bank Of India
+
+                        </td>
+                        <td data-column="Interest Rate Range">11.2% onwards	</td>
+                        <td data-column="Procesing Fee">From 2% to 3%</td>
+                        <td data-column="Loan Amount">Rs. 10 Lakh to Rs. 20 Crore	</td>
+                        <td data-column="Tenure">2 - 30 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    
+                   
+                    <tr>
+                        <td data-column="Bank Name">
+                            <img src="/img/core-img/kotak-mahindra-bank (1).png"><br>
+                            Kotak Mahindra Bank 
+                        </td>
+                        <td data-column="Interest Rate Range">10.99% - 16.25%
+                            Fixed</td>
+                        <td data-column="Procesing Fee">0.50% or Max Rs. 10,000
+                        </td>
+                        <td data-column="Loan Amount">Rs. 3 lakhs to Rs. 75 Lakhs	</td>
+                        <td data-column="Tenure">2 - 5 Years</td>
+                        <td class="apply">
+                            <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </section>
+            <!-- modal-content Start  -->
+            <div id="login" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+      
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button data-dismiss="modal" class="close">&times;</button>
+                            <h4 style="text-align: center;">Find Best Loan Offers</h4>
+                            <form>
+                                <input type="text" name="username" class="username form-control" placeholder="Your Name" required>
+
+                                <input type="email" class=" username form-control" name="email" placeholder="E-mail" required >
+
+                                <input  type="tel" class=" username form-control" name="tel" id="tel" placeholder="Contact Number" required>
+
+                                <input type="text" name="username" class="username form-control" placeholder="Type Of Loan" required>
+
+                                <textarea  class=" username form-control" name="message" id="message" cols="20" rows="3" placeholder="Send A Message"></textarea>
+                                <input class="btn login" type="submit" value="Send Details" />
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <!-- modal-content End  -->
+
+        </div>
+        
+                
+            </div>
+
+
+        </div>
+
+    </div>
+    <br><br>
+    <!-- ///////bank details end/////// -->
+
+    
+
+    <!-- Frequently Ask Questions -->
+    <div class="container">
+        <div class="row">
+            <h3><i class="fa fa-hand-o-right"></i>&nbsp;Frequently Ask Questions</h3>
+            <div class="col-sm-12 col-md-12 col-xl-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header  p-0" id="headingOne">
+                        <h2 class="mb-0     col-md-4">
+                          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="width: auto; "></i>&nbsp;
+                            Any Property Documents is required to get the business loan?  
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body"> <b>Answer:</b>
+                            No, Property Documents are not required to get the business loan, but if there any income stability get mismatch then bankers also request to customer for a mortgage the property. 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card accordion ">
+                      <div class="card-header p-0" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679; "></i>&nbsp;
+                             What are the Business loan rate of interest offered by financial lender?
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body"><b>Answer:</b>
+                            Interest rate offered by various financial lender and NBFCs starts from 12% onwards.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header p-0" id="headingThree">
+                        <h2 class="mb-0">
+                          <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679; "></i>&nbsp;
+                            My monthly income is Rs.30,000. can I get a business loan? 
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body"><b>Answer:</b>
+                            Yes, any individual who have yearly income above rs.25,000 and above at the time of loan application is eligible to apply for business loan. 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div> 
+
+        <!-- ///////bank details end/////// -->
+
+       
+
+
+
+        <br><br>
+
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title">
+                                <img src="/img/core-img/footerlogo.jpg"  style="margin-left: 50px;" >
+                            </h5>
+                            <!-- Nav -->
+                            <nav>
+                                <p style="color: white;text-align: justify; margin-top: 30px;">Z Finance is defined as the management of money
+                                    and includes activities such
+                                    as investing, borrowing, lending, and forecasting.</p>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title" style="margin-left: 20px;">About Us</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <ul>
+                                    
+                                    <li><a href="index.html">  <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Homepage</a></li>
+                                    <li><a href="about.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>About Us</a></li>
+                                    <li><a href=""> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Account Opening</a></li>
+                                    <li><a href="personalloan.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan</a></li>
+                                    <li><a href="contact.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Contact Us</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+    
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title" style="margin-left: 20px;">Our Loans</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <ul>
+                                    <li><a href="personalloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Personal Loan</a></li>
+                                    <li><a href="businessloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Business Loan</a></li>
+                                    <li><a href="homeloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Home Loan</a></li>
+                                    <li><a href="mortgage.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan Against Property</a></li>
+                                    <li><a href="usedcarloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Used Car Loan</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>&nbsp;Gold Loan</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+    
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title">Contact Us</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <p class="address">
+                                    <i class="fa fa-map-marker fa-1x" style="color: #ffbb38;" ></i>&nbsp;Rajdhani Complex, Office No. A/409, 4th Floor, Near Shankar Maharaj Math Pune-Satara
+                                    Road, Pune 411043
+                                </p>
+                                <p class="address"><i class="fa fa-envelope-o fa-1x" style="color: #ffbb38;"></i>&nbsp;zfinance111@gmail.com</p>
+                                <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    9881037540</p>
+                                <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    8482888323</p>
+                                
+                            </nav>
+                        </div>
+                    </div>
+                      <!--Terms conditions  -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="offset-md-2 col-md-7">
+                                <div class="pb-legal-links">
+                                    <div class="row">
+                                        <div class=" col-sm-12 para">
+                                            <a href="privacypolicy.html" data-ga-label="footerPrivacyPolicy" style="color:  #ffbb38;">Privacy Policy|</a>
+                                        <!-- </div>
+                                        <div class=" col-sm-1"> -->
+                                            <a href="termscondition.html" data-ga-label="footerTermsOfUse" style="color:  #ffbb38;">Terms And condition|</a>
+                                        <!-- </div>
+                                        <div class=" col-sm-1"> -->
+                                            <a href="disclaimer.html" data-ga-label="footerDisclaimer" style="color:  #ffbb38;">Disclaimer</a>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- social media links -->
+                            <!-- <div class="col-md-3">
+                                <div class="pb-social-links">
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.facebook.com/Paisabazaar" data-ga-label="footerFacebook"><img src="PBHP/assets/images/footer/facebook.svg" data-src="PBHP/assets/images/footer/facebook.svg" alt="facebook"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://in.linkedin.com/company/paisabazaar" data-ga-label="footerLinkedIn"><img src="PBHP/assets/images/footer/linkedin.svg" data-src="PBHP/assets/images/footer/linkedin.svg" alt="linkedin"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://twitter.com/PaisaBazaar_in" data-ga-label="footerTwitter"><img src="PBHP/assets/images/footer/twitter.svg" data-src="PBHP/assets/images/footer/twitter.svg" alt="twitter"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UC7YUrsXvsWdidfUNjDUOACg" data-ga-label="footerYoutube"><img src="PBHP/assets/images/footer/youtube.svg" data-src="PBHP/assets/images/footer/youtube.svg" alt="youtube"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.instagram.com/paisabazaar_pb/" data-ga-label="footerInstagram"><img src="PBHP/assets/images/footer/instagram.svg" data-src="PBHP/assets/images/footer/instagram.svg" alt="instagram"></a>
+                                </div>
+                            </div> -->
+                            <!-- /social media links -->
+                        </div>
+                    </div>   
+    
+                </div>
+            </div>
+    
+            <!-- Copywrite Area -->
+            <div class="copywrite-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
+    
+    
+                                <!-- Copywrite Text -->
+                                <p class="copywrite-text">
+                                    Copyright@2019 <a href="https://zpluscybertech.com/">ZPlusCyberSecure Technologies Pvt.
+                                        Ltd.</a> | All Rights Reserved.
+    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>  <footer class="footer-area section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title">
+                                <img src="/img/core-img/footerlogo.jpg"  style="margin-left: 50px;" >
+                            </h5>
+                            <!-- Nav -->
+                            <nav>
+                                <p style="color: white;text-align: justify; margin-top: 30px;">Z Finance is defined as the management of money
+                                    and includes activities such
+                                    as investing, borrowing, lending, and forecasting.</p>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title" style="margin-left: 20px;">About Us</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <ul>
+                                    
+                                    <li><a href="index.html">  <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Homepage</a></li>
+                                    <li><a href="about.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>About Us</a></li>
+                                    <li><a href=""> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Account Opening</a></li>
+                                    <li><a href="personalloan.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan</a></li>
+                                    <li><a href="contact.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Contact Us</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+    
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title" style="margin-left: 20px;">Our Loans</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <ul>
+                                    <li><a href="personalloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Personal Loan</a></li>
+                                    <li><a href="businessloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Business Loan</a></li>
+                                    <li><a href="homeloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Home Loan</a></li>
+                                    <li><a href="mortgage.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan Against Property</a></li>
+                                    <li><a href="usedcarloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Used Car Loan</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>&nbsp;Gold Loan</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+    
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-100">
+                            <h5 class="widget-title">Contact Us</h5>
+                            <!-- Nav -->
+                            <nav>
+                                <p class="address">
+                                    <i class="fa fa-map-marker fa-1x" style="color: #ffbb38;" ></i>&nbsp;Rajdhani Complex, Office No. A/409, 4th Floor, Near Shankar Maharaj Math Pune-Satara
+                                    Road, Pune 411043
+                                </p>
+                                <p class="address"><i class="fa fa-envelope-o fa-1x" style="color: #ffbb38;"></i>&nbsp;zfinance111@gmail.com</p>
+                                <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    9881037540</p>
+                                <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    8482888323</p>
+                                
+                            </nav>
+                        </div>
+                    </div>
+                      <!--Terms conditions  -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="offset-md-2 col-md-7">
+                                <div class="pb-legal-links">
+                                    <div class="row">
+                                        <div class=" col-sm-12 para">
+                                            <a href="privacypolicy.html" data-ga-label="footerPrivacyPolicy" style="color:  #ffbb38;">Privacy Policy|</a>
+                                        <!-- </div>
+                                        <div class=" col-sm-1"> -->
+                                            <a href="termscondition.html" data-ga-label="footerTermsOfUse" style="color:  #ffbb38;">Terms And condition|</a>
+                                        <!-- </div>
+                                        <div class=" col-sm-1"> -->
+                                            <a href="disclaimer.html" data-ga-label="footerDisclaimer" style="color:  #ffbb38;">Disclaimer</a>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- social media links -->
+                            <!-- <div class="col-md-3">
+                                <div class="pb-social-links">
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.facebook.com/Paisabazaar" data-ga-label="footerFacebook"><img src="PBHP/assets/images/footer/facebook.svg" data-src="PBHP/assets/images/footer/facebook.svg" alt="facebook"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://in.linkedin.com/company/paisabazaar" data-ga-label="footerLinkedIn"><img src="PBHP/assets/images/footer/linkedin.svg" data-src="PBHP/assets/images/footer/linkedin.svg" alt="linkedin"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://twitter.com/PaisaBazaar_in" data-ga-label="footerTwitter"><img src="PBHP/assets/images/footer/twitter.svg" data-src="PBHP/assets/images/footer/twitter.svg" alt="twitter"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UC7YUrsXvsWdidfUNjDUOACg" data-ga-label="footerYoutube"><img src="PBHP/assets/images/footer/youtube.svg" data-src="PBHP/assets/images/footer/youtube.svg" alt="youtube"></a>
+                                    <a target="_blank" rel="nofollow noopener" href="https://www.instagram.com/paisabazaar_pb/" data-ga-label="footerInstagram"><img src="PBHP/assets/images/footer/instagram.svg" data-src="PBHP/assets/images/footer/instagram.svg" alt="instagram"></a>
+                                </div>
+                            </div> -->
+                            <!-- /social media links -->
+                        </div>
+                    </div>   
+    
+                </div>
+            </div>
+    
+            <!-- Copywrite Area -->
+            <div class="copywrite-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
+    
+    
+                                <!-- Copywrite Text -->
+                                <p class="copywrite-text">
+                                    Copyright@2019 <a href="https://zpluscybertech.com/">ZPlusCyberSecure Technologies Pvt.
+                                        Ltd.</a> | All Rights Reserved.
+    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ##### Footer Area Start ##### -->
+
+        <!-- ##### All Javascript Script ##### -->
+
+        <!-- ///////back details///// -->
+        <!-- jQuery via Google's CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#f-accordion").accordion({
+                    collapsible: true,
+                    heightStyle: "content"
+                });
+            });
+
+            //Alert button
+            $('.button').click(function () {
+                $('.alert').slideToggle();
+            });
+
+            $('i.close').click(function () {
+                $('.alert').slideToggle();
+            });
+
+
+            //JS table filter
+            (function (document) {
+                'use strict';
+
+                var LightTableFilter = (function (Arr) {
+
+                    var _input;
+
+                    function _onInputEvent(e) {
+                        _input = e.target;
+                        var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                        Arr.forEach.call(tables, function (table) {
+                            Arr.forEach.call(table.tBodies, function (tbody) {
+                                Arr.forEach.call(tbody.rows, _filter);
+                            });
+                        });
+                    }
+
+                    function _filter(row) {
+                        var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                        row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+                    }
+
+                    return {
+                        init: function () {
+                            var inputs = document.getElementsByClassName('light-table-filter');
+                            Arr.forEach.call(inputs, function (input) {
+                                input.oninput = _onInputEvent;
+                            });
+                        }
+                    };
+                })(Array.prototype);
+
+                document.addEventListener('readystatechange', function () {
+                    if (document.readyState === 'complete') {
+                        LightTableFilter.init();
+                    }
+                });
+
+            })(document);
+ //Filter Table
+        </script>
+        <!-- Phone Number -->
+        <script>
+            function phoneMask() { 
+        var num = $(this).val().replace(/\D/g,''); 
+        $(this).val( num.substring(0,5) + '-' + num.substring(5,10)); 
+        }
+        $('[type="tel"]').keyup(phoneMask);
+        </script>
+
+        <!-- jQuery-2.2.4 js -->
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="js/active.js"></script>
+</body>
+
+</html>

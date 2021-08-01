@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Z Finance</title>
+    <link rel="stylesheet" href="/css/personal.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/zlogo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    /* Form */
+    
+.login-trigger {
+  font-weight: normal;
+  color: #fff;
+  background-color: #003679;
+  padding: 10%;
+  border-radius: 0;
+  position: relative; 
+  top: 50%;
+}
+
+h4 {
+  font-weight: bold;
+  color: #fff;
+}
+a:link,
+a:visited {
+  text-decoration:none;
+  color:rgb(255, 250, 250);
+}
+a:hover{
+    /* background: linear-gradient(to bottom right,#5c9ae7,#003679); */
+    color: white;
+    
+}
+.close {
+  color: #fff;
+  transform: scale(1.2)
+}
+.modal-content {
+    margin-top: 100px;
+  font-weight: bold;
+  background: linear-gradient(to bottom right,#003679,#5c9ae7);
+}
+.form-control {
+  margin: 1em 0;
+  color: #fff;
+}
+.form-control:hover, .form-control:focus {
+  box-shadow: none;  
+  border-color: #fff;
+  color: rgb(10, 10, 10);
+}
+.username {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid #eee;
+  padding-left: 5px;
+  font-weight: normal;
+  background: transparent;  
+}
+.form-control::-webkit-input-placeholder {
+  color: rgb(255, 251, 251);  
+}
+.form-control:focus::-webkit-input-placeholder {
+  font-weight: bold;
+  color: #fff;
+}
+.login {
+  padding: 6px 20px;
+  border-radius: 20px;
+  background: none;
+  border: 2px solid white;
+  color: #fff;
+  font-weight: bold;
+  transition: all .5s;
+  margin-top: 1em;
+  margin-left: 30%;
+}
+.login:hover {
+    background: linear-gradient(to top left,#003679,#5c9ae7);
+  color: #fff;
+}
+
+
+
+
+
+/* TAble */
+table { 
+	width: 100%; 
+	border-collapse: collapse; 
+	margin:10px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #003679; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+    font-size: 14px;
+    word-wrap: normal;
+    
+
+	}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+          margin: 0;
+    }
+        /* Form */
+    .login-trigger {
+        padding: 5%;
+        border-radius: 7px;  
+    }
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+        padding-right: auto; 
+        text-align: center;
+		/* white-space: nowrap; */
+        
+		/* Label the data */
+		content: attr(data-column);
+        background: #003679; 
+	    color: white;
+		/* color: #000; */
+		font-weight: normal;
+	}
+
+}
+</style>
+    
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+
+
+        <!-- Navbar Area -->
+        <div class="credit-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="creditNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- //////logo//////// -->
+                        <div class="imglogo">
+                            <img src="/img/core-img/zlogo.png">
+                        </div>
+
+
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="#">Account Opening</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">&nbsp;AllBanks
+                                                    Account&nbsp;&nbsp;&nbsp;Opening</a></li><br>
+                                            <li><a href="index.html">&nbsp;D-Mat Account &nbsp;&nbsp;&nbsp;Opening</a>
+                                            </li><br>
+                                            <li><a href="index.html">&nbsp;Insurance</a></li><br>
+                                            <li><a href="index.html">&nbsp;Credit Card</a></li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Loan</a>
+                                        <ul class="dropdown">
+                                            <li><a href="personalloan.html">&nbsp;Personal Loan</a></li>
+                                            <li><a href="businessloan.html">&nbsp;Business Loan</a></li>
+                                            <li><a href="homeloan.html">&nbsp;Home Loan</a></li>
+                                            <li><a href="mortgage.html">&nbsp;Loan Against Property</a></li>
+                                            <li><a href="usedcarloan.html">&nbsp;Used Car Loan</a></li>
+                                            <li><a href="#">&nbsp;Gold Loan</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="contact">
+                            <a href="tel:9850083751"><img src="img/core-img/call2.png" alt=""> +91  9850083751
+                            
+                            
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/13.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Personal Loan</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Personal Loan</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breadcrumb Area End ##### -->
+    <br><br><br>
+  
+
+
+    <br><br><br>
+    <!-- ///// personal loan information////////// -->
+    
+
+    <div class="container pt-2">
+        <div class="row">
+                <h3><i class="fa fa-hand-o-right"></i>&nbsp; About Personal Loan? </h3>
+                    <div class="col-sm-12 border1">
+                            <p class="per"><i class="fa fa-star-half-o" style="color: #003679;" aria-hidden="true"></i> &nbsp;A Personal Loan is a short-term unsecured loan, which does not require any mortgage to get a loan from the bank. The Personal Loan generally approve within a few hours to a few days with minimum or zero paperwork. We should take this unsecured loan to meet different types of needs varying from emergency medical needs and home renovation, wedding, traveling, or buying some costly products, etc. Z Finance offers instant approval for Personal Loan which gets disbursed in 48 hours to 3 days from  NBFC or nationalize Banks.  </p>
+                    </div>
+        </div>
+    </div>
+    <br><br>    
+        <!-- Why Choose Z Finance Services? -->
+        <div class="container" >
+            <div class="row">
+                <h3><i class="fa fa-hand-o-right"></i>&nbsp;Why Choose Z Finance Services?</h3>
+                <div class="col-sm-12 border1 ">
+                    <p class="per">
+                    <i class="fa fa-star-half-o" style="color: #003679;" aria-hidden="true"></i>
+                     All top Bank and NBFCs provide personal loan, but choosing one of them is a little bit confusing and it is a time-consuming process. <b>Z Finance Team</b> also helps you with selecting and processing your Personal Loan as per your requirements. <br> Here are the reasons to choose Our financial services:</p>
+                     <ul>
+                        <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>End to End Service:</b>&nbsp; 100% assistance for the loan with help of top Lenders in India.</li><br>
+                        <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Transparent Process:</b>&nbsp;  Specialists are there to clarify any query related to your Housing loan application.</li><br>
+                        <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Expert Advice:</b>&nbsp; You get proficient guidance from qualified Z finance Experts.</li><br>
+                        <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Online Marketplace:</b>&nbsp; Z Finance is an online marketplace for all types of  loans with honest suggestions.</li><br>
+                        <li><i class="fa fa-check"  style="color: orange; font-weight: bold;"></i>&nbsp;&nbsp; <b>Associated With Top Bank :</b>&nbsp; Associated with top banks like ICICI, SBI, HDFC, IDFC, PNB, and top finance banks </li><br>
+                    </ul> 
+                </div>
+            </div>
+        </div> 
+    <br><br>
+    <!-- dummy Table -->
+
+     <!-- Personal Loan Interest Rate Table --> 
+     <div class="container ">
+        <div class="row">
+            <h3><i class="fa fa-hand-o-right"></i>&nbsp;Personal Loan Interest Rates</h3>
+            <div class="col-sm-12 col-md-12">
+                <table class=" ">
+                    <!-- table table-striped table-hover rwd-table -->
+                    <thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                        <tr>
+                            <th>Bank Name</th>
+                            <th >Rate of Interest</th>
+                            <th >Loan Amount</th>
+                            <th >Processing Fee</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="">
+                    <tr>
+                        <td data-column="Bank Name"> <b>  SBI Personal Loan </b></td>
+                        <td data-column="Rate of Interest">9.75% to 16.25%</td>
+                        <td data-column="Loan Amount">Upto Rs.25L</td>
+                        <td data-column="Processing Fee">1.00% , Min Rs. 4,000, Max Rs. 17,400</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name" > <b> HDFC Bank Personal Loan </b></td>
+                        <td data-column="Rate of Interest">10.50% to 22.00%</td>
+                        <td data-column="Loan Amount" >Up to Rs.40L</td>
+                        <td data-column="Processing Fee">Upto 2.50% Min Rs. 1,999 Max Rs. 10,000</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> Bank of Baroda Personal Loan</b></td>
+                        <td data-column="Rate of Interest">12.50% onwards</td>
+                        <td data-column="Loan Amount">Upto Rs.20L</td>
+                        <td data-column="Processing Fee">2% (Rs.1000 to Rs.10,000)+GST</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> Federal Bank</b></td>
+                        <td data-column="Rate of Interest">11.49% to 17.99%</td>
+                        <td data-column="Loan Amount">Upto Rs.35L</td>
+                        <td data-column="Processing Fee">0.5%, Min Rs. 500 to Max Rs. 7,500</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> PNB Bank ltd </b></td>
+                        <td data-column="Rate of Interest">9.95% p.a. to 14.50% p.a.</td>
+                        <td data-column="Loan Amount">Upto Rs.30L</td>
+                        <td data-column="Processing Fee">1.8% of the loan amount</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> Axis Bank Ltd</b></td>
+                        <td data-column="Rate of Interest">10.49% p.a onwards</td>
+                        <td data-column="Loan Amount">Upto Rs.40L</td>
+                        <td data-column="Processing Fee">Upto 1.75%</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> IDBI Bank</b></td>
+                        <td data-column="Rate of Interest">12.00% to 17.50%</td>
+                        <td data-column="Loan Amount">Upto Rs.25L</td>
+                        <td data-column="Processing Fee">Min Rs. 5,000</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> Kotak Mahindra Bank </b></td>
+                        <td data-column="Rate of Interest">10.75% to 17.99%</td>
+                        <td data-column="Loan Amount">Rs.50K - Rs.25L</td>
+                        <td data-column="Processing Fee">Up to 2.50%</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> ICICI Bank</b></td>
+                        <td data-column="Rate of Interest">10.75% - 22.00%</td>
+                        <td data-column="Loan Amount">0.75% onwards Min Rs.999 onwards</td>
+                        <td data-column="Processing Fee">Upto 2.25% of Loan Amount</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Bank Name"> <b> Yes Bank</b></td>
+                        <td data-column="Rate of Interest">10.45% - 20.00%</td>
+                        <td data-column="Loan Amount"> Min 50k to 40L</td>
+                        <td data-column="Processing Fee">Starting at 0.99%, Upto 2%</td>
+                    </tr>                   
+                    </tbody>
+              </table>                  
+            </div>
+        </div> 
+    </div>
+    <br><br>
+
+
+
+
+
+
+
+      <!-- Personal Loan Eligiblity --> 
+      <div class="container ">
+        <div class="row">
+            <h3><i class="fa fa-hand-o-right"></i>&nbsp;Personal Loan Eligibility</h3>
+            <div class="col-sm-12 col-md-12">
+                <table class="" style="list-style-type: circle;">
+                    <thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                        <tr>
+                            <th>Eligibility Criteria</th>
+                            <th >Requirement</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Age</b></td>
+                        <td data-column="Requirement">Minimum Age: 21 years and Maximum Age: 60 years</td>
+                    </tr>
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Annual Monthly Income</b></td>
+                        <td data-column="Requirement">Minimum Rs-20,000 per months, depending on the type of employment</td>
+                    </tr> 
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Cibil Score</b></td>
+                        <td data-column="Requirement">At least 700+ or depending on requirements</td>
+                    </tr>  
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Stability of Employment</b></td>
+                        <td data-column="Requirement">
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;<b> Total experience:</b> Minimum 2 years</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;<b> Current Organization:</b> Minimum 6 months to 1 years</li>
+                            </ol>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Employment</b></td>
+                        <td data-column="Requirement">The applicant must be:
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Salaried</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Eligibility Criteria"> <b> Residence</b></td>
+                        <td >The applicant must be (anyone):
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp;  Permanent Resident</li>
+                                <li> <i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Rented Residence where applicant resided minimum of two year</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    </tbody>
+              </table>                  
+            </div>
+        </div>
+        <br> 
+    </div>
+    
+        <br><br>
+       
+
+
+
+     <!-- Documents Required for Personal Loan -->
+         <div class="container ">
+        <h3><i class="fa fa-hand-o-right"></i>&nbsp;Documents Required for Personal Loan</h3>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 ">
+                <table class="" style="list-style-type: circle;">
+                    <thead style="text-align: center; background-color:#003679;color: aliceblue">
+                        <tr>
+                            <th>Required Documents</th>
+                            <th>For Salaried Applicant</th>
+                            <th>For NRI Salaried Applicant</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                    
+                    <tr>
+                        <td data-column="Required Documents"> <b> Identity Proof</b></td>
+                        <td data-column="For Salaried Applicant">Any Two of Required
+                            <ul>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; PAN Card</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Voter ID</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Valid Passport</li>
+                            </ul>
+                        </td>
+                        <td data-column="For NRI Salaried Applicant"> Required Documents
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Copy of your Passport</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Visa Copy</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Your official Email ID or Company Email ID </li>
+                                
+                            </ol>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td data-column="Required Documents"> <b> Residence Address Proof</b> </td>
+                        <td data-column="For Salaried Applicant">
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Adhar-Card</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Driving License</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Copy of Passport</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Electricity/ Telephone/ Mobile bill</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Rent Agreement</li>
+                            </ol>
+                        </td>
+                        <td data-column="For NRI Salaried Applicant">
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Copy of your Passport</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Visa Copy</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; NRO/NRE banking </li>
+                            </ol>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td data-column="Required Documents"> <b> Income Proof </b></td>
+                        <td data-column="For Salaried Applicant">
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Last 3 months Payslip</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Minimum One year of Form 16</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Latest 6 months Banking </li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; If required Co-applicant or guarantors then their same set of documents</li>
+                            </ol>
+                        </td>
+                        <td data-column="For NRI Salaried Applicant">
+                            <ol>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Salary Certificate</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; NRO/NRE bank statements of the last 6 Months</li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; Proof of  Income, and Assets                                </li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679;"></i>&nbsp; &nbsp;&nbsp; 12 Months of Banking</li>
+                                
+                            </ol>
+                        </td>
+                    </tr>  
+                                     
+                    </tbody>
+              </table> 
+            </div>
+        </div>
+         </div><br><br>
+         <div class="container">
+            <button class="btn credit-btn" style="float: right;">     
+                <a  href="Personal_Details.docx" download >               
+                <i class="fa fa-download" aria-hidden="true"></i> &nbsp; Downlaod</a>
+            </button>
+        </div><br>
+    
+        <!-- ///////bank details/////// -->
+        <div class="container bankdetails"  >
+            <h3><i class="fa fa-tasks"></i> Personal Loan</h3>
+            <div>
+                <!-- <p>
+                    We found 18 Personal Loans
+                </p>
+                <input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrer" /> <a class="button"></a> -->
+                <section >
+                    <table >
+                        <thead thead style="text-align: center; background-color:#003679;color: aliceblue;">
+                            <tr>
+                                <th style="width: 200px;">Bank Name</th>
+                                <th>Interest Rate Range</th>
+                                <th>Procesing Fee Range</th>
+                                <th>Loan Amount</th>
+                                <th>Tenure</th>
+                                <th style="width: 120px;">Apply</th>
+                            </tr>
+                        </thead>
+    
+                        <tr>
+                            <td data-column="Bank Name">
+                                <img  src="/img/core-img/22.jpg" style="width: 70px; height: 50px;"> <br>
+                                     Fullerton Personal Loan</td>
+                            <td data-column="Interest Rate Range">11.99% - 25.00% p.a.</td>
+                            <td data-column="Procesing Fee Range">3.00% - 6.00% (Processing Fee)</td>
+                            <td data-column="Loan Amount">Up to ₹.25L</td>
+                            <td data-column="Tenure">1 to 5 Years</td>
+                            <td class="apply">
+                               
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/tata-capital-limited.png">
+                                <br>
+                                Tata Capital Personal Loan
+    
+                            </td>
+                            <td data-column="Interest Rate Range">11.25% - 14.49%
+                                (Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">Up to 2.75%  + GST
+                                (Processing Fee)</td>
+                            <td data-column="Loan Amount">Up to ₹.20L</td>
+                            <td data-column="Tenure">1 - 6 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/hdfc-limited.png"> <br>
+                                HDFC Limited
+    
+                            </td>
+                            <td data-column="Interest Rate Range">10.75% - 21.50%
+                                (Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">Up to 0.5% (max.₹ 11,800)
+                                (Processing Fee)</td>
+                            <td data-column="Loan Amount">₹ 5L -₹ 10Crs</td>
+                            <td data-column="Tenure">1-30 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/indusind-bank.png"> <br>
+                                IndusInd bank Ltd
+                            </td>
+                            <td data-column="Interest Rate Range">11.00% to 31.50%
+                                (Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">Processing Fee – 2.5% onwards</td>
+                            <td data-column="Loan Amount">Loan Amount will be range 50,000 to 15 Lacs</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/axis-bank.png"> <br>
+                                Axis Bank Ltd
+    
+                            </td>
+                            <td data-column="Interest Rate Range">10.49% - 24.00%
+                                (Fixed /Floating Rates)
+                                </td>
+                            <td data-column="Procesing Fee Range">0.50% (min.₹ 10,000)
+                                (Processing Fee)</td>
+                            <td data-column="Loan Amount">₹ 50,000L -₹ 15L</td>
+                            <td data-column="Tenure">1-5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/icici-bank (1).png"> <br>
+                                ICICI Bank Personal Loan
+    
+                            </td>
+                            <td data-column="Interest Rate Range">10.75% - 22.00%(Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">0% - 0.50% + Applicable Taxes
+                                One time fee (Processing Fee)</td>
+                            <td data-column="Loan Amount">Up to Rs.20L</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/home-credit.png"> <br>
+                                HOME CREDIT 
+                            </td>
+                            <td data-column="Interest Rate Range">13.00% - 30.00%(Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">varies between 0% - 5%</td>
+                            <td data-column="Loan Amount">Rs.30,000 to Rs. 15L</td>
+                            <td data-column="Tenure">1-5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/aditya-birla-capital-2.png"> <br>
+                                Aditya Birla Capital Ltd
+                            </td>
+                            <td data-column="Interest Rate Range">11.00% - 13.75%
+                                
+                                (Fixed Rate)</td>
+                            <td data-column="Procesing Fee Range">1.00% onwards + applicable tax
+                                (Processing Fee)</td>
+                            <td data-column="Loan Amount">Up to Rs.30L</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/indiabulls-5.png"> <br>
+                                Indiabulls Ltd Personal Loan
+                            </td>
+                            <td data-column="Interest Rate Range">13.49% - 19.99%
+                                Fixed</td>
+                            <td data-column="Procesing Fee Range">3% onwards
+                                One time fee</td>
+                            <td data-column="Loan Amount">loans from ₹1,000 to ₹15 Lakhs</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/4.jpg"  style="width: 70px; height: 40px;"><br>
+                                IDFC First Bank 
+                            </td>
+                            <td data-column="Interest Rate Range">15.00% - 22.00%
+                                Fixed</td>
+                            <td data-column="Procesing Fee Range">Up to 3.50% Processing Fee</td>
+                            <td data-column="Loan Amount">Up to Rs.25L</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/yes_bank.png" ><br>
+                                Yes Bank Personal Loan
+                            </td>
+                            <td data-column="Interest Rate Range">interest rates starting from 10.75% onwards  
+                                Fixed</td>
+                            <td data-column="Procesing Fee Range">1.00% - 6.00%
+                                One time fee</td>
+                            <td data-column="Loan Amount">Rs.25L Max</td>
+                            <td data-column="Tenure">1 - 5 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  data-column="Bank Name">
+                                <img  src="/img/core-img/state-bank-of-india-home-loan-2.png"> <br>
+                                State Bank Of India
+    
+                            </td>
+                            <td data-column="Interest Rate Range">10.60%  - 13.80%
+                                Fixed</td>
+                            <td data-column="Procesing Fee Range">1% onwards</td>
+                            <td data-column="Loan Amount">Loans of up to Rs.20 lakh</td>
+                            <td data-column="Tenure">1 - 6 Years</td>
+                            <td class="apply">
+                                <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Apply Now</a>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <!-- modal-content Start  -->
+            <div id="login" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+      
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button data-dismiss="modal" class="close">&times;</button>
+                            <h4 style="text-align: center;">Find Best Loan Offers</h4>
+                            <form>
+                                <input type="text" name="username" class="username form-control" placeholder="Your Name" required>
+
+                                <input type="email" class=" username form-control" name="email" placeholder="E-mail" required >
+
+                                <input  type="tel" class=" username form-control" name="tel" id="tel" placeholder="Contact Number" required>
+
+                                <input type="text" name="username" class="username form-control" placeholder="Type Of Loan" required>
+
+                                <textarea  class=" username form-control" name="message" id="message" cols="20" rows="3" placeholder="Send A Message"></textarea>
+                                <input class="btn login" type="submit" value="Send Details" />
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <!-- modal-content End  -->
+            </div>                 
+        </div>
+    
+    
+            </div>
+    
+        </div>
+        <br><br>
+    
+        <!-- Frequently Ask Questions -->
+        <div class="container">
+            <div class="row">
+                <h3><i class="fa fa-hand-o-right"></i>&nbsp;Frequently Ask Questions</h3>
+                <div class="col-sm-12 col-xl-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-header p-0" id="headingOne">
+                            <h2 class="mb-0">
+                              <button class="btn btn-light btn-block text-left p-3 rounded-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679; "></i>
+                                What is salary requirement to get instant personal loan?  
+                              </button>
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body"><b>Answer:</b>
+                                The minimum monthly salary required to get a personal loan depends on Bank to banks. However, it commonly ranges between Rs. 18,000 and Rs. 25,000 per month. 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card accordion ">
+                          <div class="card-header p-0" id="headingTwo">
+                            <h2 class="mb-0">
+                              <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679; "></i>
+                                What is process of  personal loan approval ?
+
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body"><b>Answer:</b>
+                                Once you fill your loan application request to a bank for a personal loan, the bank verifies and approves it. Post this, the loan amount is distributed into your bank account. Once you get the loan amount, you will need to return the lender via EMIs.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header p-0" id="headingThree">
+                            <h2 class="mb-0">
+                              <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"style="font-size: large;"><i class="fa fa-arrow-right" aria-hidden="true" style="color: #003679; "></i>
+                                Should student apply for a personal loan?
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body"> <b>Answer:</b>
+                                Usually, students are not fit for a personal loan as a fixed source of income and necessary documents. However, Students can also apply for an education loan as per their requirements and fees.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div> 
+    
+    <br><br>
+    <!-- ///////bank details end/////// -->
+
+
+
+
+    <br><br>
+
+   
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5 class="widget-title">
+                            <img src="/img/core-img/footerlogo.jpg"  style="margin-left: 50px;" >
+                        </h5>
+                        <!-- Nav -->
+                        <nav>
+                            <p style="color: white;text-align: justify; margin-top: 30px;">Z Finance is defined as the management of money
+                                and includes activities such
+                                as investing, borrowing, lending, and forecasting.</p>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5 class="widget-title" style="margin-left: 20px;">About Us</h5>
+                        <!-- Nav -->
+                        <nav>
+                            <ul>
+                                
+                                <li><a href="index.html">  <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Homepage</a></li>
+                                <li><a href="about.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>About Us</a></li>
+                                <li><a href=""> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Account Opening</a></li>
+                                <li><a href="personalloan.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan</a></li>
+                                <li><a href="contact.html"> <i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Contact Us</a></li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5 class="widget-title" style="margin-left: 20px;">Our Loans</h5>
+                        <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li><a href="personalloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Personal Loan</a></li>
+                                <li><a href="businessloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Business Loan</a></li>
+                                <li><a href="homeloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Home Loan</a></li>
+                                <li><a href="mortgage.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Loan Against Property</a></li>
+                                <li><a href="usedcarloan.html"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>Used Car Loan</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right color" style="color: #ffbb38">&nbsp;&nbsp;</i>&nbsp;Gold Loan</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5 class="widget-title">Contact Us</h5>
+                        <!-- Nav -->
+                        <nav>
+                            <p class="address">
+                                <i class="fa fa-map-marker fa-1x" style="color: #ffbb38;" ></i>&nbsp;Rajdhani Complex, Office No. A/409, 4th Floor, Near Shankar Maharaj Math Pune-Satara
+                                Road, Pune 411043
+                            </p>
+                            <p class="address"><i class="fa fa-envelope-o fa-1x" style="color: #ffbb38;"></i>&nbsp;zfinance111@gmail.com</p>
+                            <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    9881037540</p>
+                            <p class="address"><i class="fa fa-phone fa-1x" style="color: #ffbb38;"></i>  +91    8482888323</p>
+                            
+                        </nav>
+                    </div>
+                </div>
+                  <!--Terms conditions  -->
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-md-2 col-md-7">
+                            <div class="pb-legal-links">
+                                <div class="row">
+                                    <div class=" col-sm-12 para">
+                                        <a href="privacypolicy.html" data-ga-label="footerPrivacyPolicy" style="color:  #ffbb38;">Privacy Policy|</a>
+                                    <!-- </div>
+                                    <div class=" col-sm-1"> -->
+                                        <a href="termscondition.html" data-ga-label="footerTermsOfUse" style="color:  #ffbb38;">Terms And condition|</a>
+                                    <!-- </div>
+                                    <div class=" col-sm-1"> -->
+                                        <a href="disclaimer.html" data-ga-label="footerDisclaimer" style="color:  #ffbb38;">Disclaimer</a>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <!-- social media links -->
+                        <!-- <div class="col-md-3">
+                            <div class="pb-social-links">
+                                <a target="_blank" rel="nofollow noopener" href="https://www.facebook.com/Paisabazaar" data-ga-label="footerFacebook"><img src="PBHP/assets/images/footer/facebook.svg" data-src="PBHP/assets/images/footer/facebook.svg" alt="facebook"></a>
+                                <a target="_blank" rel="nofollow noopener" href="https://in.linkedin.com/company/paisabazaar" data-ga-label="footerLinkedIn"><img src="PBHP/assets/images/footer/linkedin.svg" data-src="PBHP/assets/images/footer/linkedin.svg" alt="linkedin"></a>
+                                <a target="_blank" rel="nofollow noopener" href="https://twitter.com/PaisaBazaar_in" data-ga-label="footerTwitter"><img src="PBHP/assets/images/footer/twitter.svg" data-src="PBHP/assets/images/footer/twitter.svg" alt="twitter"></a>
+                                <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UC7YUrsXvsWdidfUNjDUOACg" data-ga-label="footerYoutube"><img src="PBHP/assets/images/footer/youtube.svg" data-src="PBHP/assets/images/footer/youtube.svg" alt="youtube"></a>
+                                <a target="_blank" rel="nofollow noopener" href="https://www.instagram.com/paisabazaar_pb/" data-ga-label="footerInstagram"><img src="PBHP/assets/images/footer/instagram.svg" data-src="PBHP/assets/images/footer/instagram.svg" alt="instagram"></a>
+                            </div>
+                        </div> -->
+                        <!-- /social media links -->
+                    </div>
+                </div>   
+
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
+
+
+                            <!-- Copywrite Text -->
+                            <p class="copywrite-text">
+                                Copyright@2019 <a href="https://zpluscybertech.com/">ZPlusCyberSecure Technologies Pvt.
+                                    Ltd.</a> | All Rights Reserved.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+
+    <!-- ///////back details///// -->
+    <!-- jQuery via Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#f-accordion").accordion({
+                collapsible: true,
+                heightStyle: "content"
+            });
+        });
+
+        //Alert button
+        $('.button').click(function () {
+            $('.alert').slideToggle();
+        });
+
+        $('i.close').click(function () {
+            $('.alert').slideToggle();
+        });
+
+
+        //JS table filter
+        (function (document) {
+            'use strict';
+
+            var LightTableFilter = (function (Arr) {
+
+                var _input;
+
+                function _onInputEvent(e) {
+                    _input = e.target;
+                    var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                    Arr.forEach.call(tables, function (table) {
+                        Arr.forEach.call(table.tBodies, function (tbody) {
+                            Arr.forEach.call(tbody.rows, _filter);
+                        });
+                    });
+                }
+
+                function _filter(row) {
+                    var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                    row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+                }
+
+                return {
+                    init: function () {
+                        var inputs = document.getElementsByClassName('light-table-filter');
+                        Arr.forEach.call(inputs, function (input) {
+                            input.oninput = _onInputEvent;
+                        });
+                    }
+                };
+            })(Array.prototype);
+
+            document.addEventListener('readystatechange', function () {
+                if (document.readyState === 'complete') {
+                    LightTableFilter.init();
+                }
+            });
+
+        })(document);
+    </script>
+
+
+    <!-- Phone Number -->
+    <script>
+        function phoneMask() { 
+    var num = $(this).val().replace(/\D/g,''); 
+    $(this).val( num.substring(0,5) + '-' + num.substring(5,10)); 
+    }
+    $('[type="tel"]').keyup(phoneMask);
+    </script>
+
+
+
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>
